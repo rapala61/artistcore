@@ -1,0 +1,38 @@
+{
+  "name": "artistcore",
+  "version": "1.0.0",
+  "description": "A tool to find out the score of an artist based on the ratings of the movies he/she/they acted in.",
+  "main": "web/server.js",
+  "author": "Rafael Pacas @rapala61 <rapala61@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv-safe": "4.0.3",
+    "koa": "2.2.0",
+    "throng": "4.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.3",
+    "nyc": "^10.2.0",
+    "server-destroy": "^1.0.1",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node web/server.js",
+    "test": "NODE_ENV=test nyc ava",
+    "test:v": "NODE_ENV=test nyc ava --verbose",
+    "test:watch": "NODE_ENV=test nyc ava --verbose --watch"
+  },
+  "ava": {
+    "files": [
+      "tests/specs/**/*.js"
+    ],
+    "concurrency": 5
+  }
+}
